@@ -1,0 +1,1736 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Writing Studio — Luyện viết 5.5 → 6.5+</title>
+<style>
+:root{
+  --red:#C8102E;
+  --red-dark:#9B0C24;
+  --red-soft:#FDECEF;
+  --navy:#0B1B33;
+  --navy-2:#122845;
+  --purple:#6D28D9;
+  --purple-soft:#F3EEFF;
+  --purple-light:#EDE4FF;
+  --gold:#F2B233;
+  --gold-soft:#FEF6E4;
+  --green:#16A34A;
+  --green-soft:#E7F7EE;
+  --amber:#D97706;
+  --amber-soft:#FEF3E2;
+  --blue:#2563EB;
+  --blue-soft:#EAF1FE;
+  --bg:#F5F7FA;
+  --card:#FFFFFF;
+  --text:#12213A;
+  --muted:#64748B;
+  --border:#E2E8F0;
+  --shadow:0 8px 30px rgba(11,27,51,.08);
+  --shadow-lg:0 20px 60px rgba(11,27,51,.16);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Roboto,Arial,sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+input,textarea{font-family:inherit}
+
+/* ============ NAV ============ */
+.nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,.93);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{
+  max-width:1240px;margin:0 auto;padding:0 24px;
+  height:70px;display:flex;align-items:center;justify-content:space-between;gap:24px;
+}
+.logo{display:flex;align-items:center;gap:12px;font-weight:800;font-size:1.12rem;letter-spacing:-.3px;text-decoration:none;color:var(--navy)}
+.logo-mark{
+  width:40px;height:40px;border-radius:12px;
+  background:linear-gradient(135deg,var(--purple),#4C1D95);
+  color:#fff;display:grid;place-items:center;
+  font-weight:900;font-size:1rem;box-shadow:0 6px 18px rgba(109,40,217,.35);
+}
+.logo span small{display:block;font-size:.63rem;font-weight:600;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase}
+.nav-links{display:flex;gap:4px;list-style:none}
+.nav-links a{
+  text-decoration:none;color:var(--muted);font-weight:600;font-size:.9rem;
+  padding:9px 14px;border-radius:10px;transition:.2s;display:block;
+}
+.nav-links a:hover{color:var(--purple);background:var(--purple-soft)}
+.nav-cta{
+  background:linear-gradient(135deg,var(--purple),#5B21B6);color:#fff;font-weight:700;font-size:.9rem;
+  padding:11px 22px;border-radius:11px;transition:.25s;
+  box-shadow:0 8px 20px rgba(109,40,217,.32);
+}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(109,40,217,.42)}
+.burger{display:none;font-size:1.6rem;color:var(--navy)}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(900px 480px at 88% -10%, rgba(109,40,217,.18), transparent 60%),
+    radial-gradient(800px 500px at -5% 110%, rgba(200,16,46,.13), transparent 60%),
+    linear-gradient(180deg,#FFFFFF 0%, #F7F9FC 100%);
+  padding:76px 24px 86px;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(rgba(11,27,51,.06) 1px, transparent 1px);
+  background-size:26px 26px;
+  mask-image:linear-gradient(180deg,#000 0%, transparent 75%);
+  pointer-events:none;
+}
+.hero-inner{
+  max-width:1240px;margin:0 auto;position:relative;
+  display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;
+}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#fff;border:1px solid var(--border);
+  padding:8px 16px;border-radius:100px;font-size:.8rem;font-weight:700;
+  color:var(--navy);box-shadow:var(--shadow);margin-bottom:22px;
+}
+.badge .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(22,163,74,.15);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{
+  font-size:3.05rem;line-height:1.1;font-weight:900;letter-spacing:-2px;
+  color:var(--navy);margin-bottom:20px;
+}
+.hero h1 .accent{
+  background:linear-gradient(120deg,var(--purple),#A855F7);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p.lead{font-size:1.05rem;color:var(--muted);max-width:540px;margin-bottom:30px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:15px 28px;border-radius:13px;font-weight:700;font-size:.95rem;
+  transition:.25s;text-decoration:none;
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--purple),#5B21B6);color:#fff;
+  box-shadow:0 14px 34px rgba(109,40,217,.35);
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(109,40,217,.45)}
+.btn-ghost{
+  background:#fff;color:var(--navy);border:1.5px solid var(--border);
+  box-shadow:var(--shadow);
+}
+.btn-ghost:hover{border-color:var(--purple);color:var(--purple)}
+
+/* Hero preview card */
+.hero-card{
+  background:#fff;border-radius:24px;padding:28px;
+  box-shadow:var(--shadow-lg);border:1px solid var(--border);
+}
+.hero-card h4{font-size:.75rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:18px;font-weight:800}
+.mini-crit{display:flex;flex-direction:column;gap:14px}
+.mini-crit-item .top{display:flex;justify-content:space-between;font-size:.82rem;font-weight:700;margin-bottom:6px;color:var(--navy)}
+.mini-crit-item .top span:last-child{color:var(--purple)}
+.mtrack{height:8px;background:#EEF1F6;border-radius:100px;overflow:hidden}
+.mfill{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--purple),#A855F7);width:0;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+.hero-note{
+  margin-top:20px;padding:14px 16px;border-radius:12px;background:var(--purple-soft);
+  font-size:.8rem;color:#5B21B6;font-weight:600;display:flex;gap:10px;align-items:flex-start;
+}
+
+/* ============ SECTION ============ */
+.section{max-width:1240px;margin:0 auto;padding:84px 24px}
+.section-head{text-align:center;max-width:700px;margin:0 auto 50px}
+.eyebrow{
+  display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:2px;
+  text-transform:uppercase;color:var(--purple);margin-bottom:14px;
+}
+.section-head h2{font-size:2.25rem;font-weight:900;letter-spacing:-1.2px;color:var(--navy);margin-bottom:14px}
+.section-head p{color:var(--muted);font-size:1rem}
+
+/* ============ WORKSPACE ============ */
+.workspace{
+  background:linear-gradient(180deg,var(--navy) 0%, var(--navy-2) 100%);
+  border-radius:30px;padding:8px;box-shadow:var(--shadow-lg);
+}
+.ws-inner{background:#fff;border-radius:24px;overflow:hidden}
+
+.ws-top{
+  display:flex;justify-content:space-between;align-items:center;gap:18px;
+  padding:18px 26px;border-bottom:1px solid var(--border);
+  background:#FBFCFE;flex-wrap:wrap;
+}
+.seg{display:flex;gap:6px;background:#EDF1F7;padding:5px;border-radius:12px}
+.seg button{
+  padding:10px 22px;border-radius:9px;font-weight:800;font-size:.85rem;
+  color:var(--muted);transition:.22s;
+}
+.seg button.active{background:#fff;color:var(--navy);box-shadow:0 2px 8px rgba(11,27,51,.1)}
+
+.timer-mini{display:flex;align-items:center;gap:14px}
+.timer-mini .clock{
+  font-size:1.35rem;font-weight:900;font-variant-numeric:tabular-nums;
+  color:var(--navy);letter-spacing:-.5px;
+}
+.timer-mini .clock.warn{color:var(--red);animation:blink 1s infinite}
+@keyframes blink{50%{opacity:.4}}
+.tbtn{
+  padding:9px 18px;border-radius:10px;font-size:.8rem;font-weight:800;
+  background:#fff;border:1.5px solid var(--border);color:var(--navy);transition:.2s;
+}
+.tbtn:hover{border-color:var(--navy)}
+.tbtn.play{background:var(--navy);color:#fff;border-color:var(--navy)}
+.tbtn.play.running{background:var(--red);border-color:var(--red)}
+
+.ws-body{padding:28px 30px}
+
+.prompt-box{
+  background:linear-gradient(135deg,#FBF8FF,#F5F0FF);
+  border:1px solid #E4D9FB;border-left:4px solid var(--purple);
+  border-radius:16px;padding:24px 26px;margin-bottom:24px;
+}
+.prompt-box .tag{
+  display:inline-block;background:var(--purple);color:#fff;font-size:.66rem;font-weight:800;
+  letter-spacing:1.2px;text-transform:uppercase;padding:5px 12px;border-radius:100px;margin-bottom:14px;
+}
+.prompt-box p{font-size:.98rem;color:var(--navy);font-weight:600;line-height:1.7}
+.prompt-box .hint{
+  margin-top:14px;font-size:.82rem;color:var(--muted);font-weight:500;
+  padding-top:14px;border-top:1px dashed #DCCFF8;
+}
+
+/* Task 1 chart */
+.chart{
+  background:#fff;border:1px solid var(--border);border-radius:14px;
+  padding:22px;margin-top:18px;
+}
+.chart-title{font-size:.85rem;font-weight:800;color:var(--navy);margin-bottom:4px}
+.chart-sub{font-size:.75rem;color:var(--muted);margin-bottom:20px}
+.chart-legend{display:flex;gap:18px;margin-bottom:18px}
+.chart-legend span{font-size:.72rem;font-weight:700;color:var(--muted);display:flex;align-items:center;gap:6px}
+.chart-legend i{width:10px;height:10px;border-radius:3px;display:block}
+.lg2000{background:#94A3B8}
+.lg2020{background:var(--purple)}
+.chart-bars{display:flex;justify-content:space-around;align-items:flex-end;height:190px;gap:10px;padding-bottom:8px;border-bottom:1.5px solid var(--border)}
+.bar-group{display:flex;flex-direction:column;align-items:center;gap:8px;flex:1;height:100%;justify-content:flex-end}
+.bar-pair{display:flex;align-items:flex-end;gap:6px;height:100%;width:100%;justify-content:center}
+.bar{
+  width:22px;border-radius:6px 6px 0 0;position:relative;
+  transition:height 1s cubic-bezier(.2,.8,.2,1);height:0;
+}
+.bar span{
+  position:absolute;top:-19px;left:50%;transform:translateX(-50%);
+  font-size:.63rem;font-weight:800;color:var(--navy);white-space:nowrap;
+}
+.b2000{background:linear-gradient(180deg,#B4C0D0,#94A3B8)}
+.b2020{background:linear-gradient(180deg,#A78BFA,var(--purple))}
+.bar-label{font-size:.72rem;font-weight:800;color:var(--navy)}
+
+/* EDITOR */
+.editor-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:10px}
+.editor-head h4{font-size:.85rem;font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:1px}
+.wordcount{font-size:.82rem;font-weight:700;color:var(--muted)}
+.wordcount b{color:var(--navy);font-size:1rem}
+.wordcount.ok b{color:var(--green)}
+.wordcount.low b{color:var(--amber)}
+
+.editor{
+  width:100%;min-height:320px;padding:24px;border-radius:16px;
+  border:1.5px solid var(--border);font-size:.94rem;line-height:1.9;resize:vertical;
+  color:var(--navy);transition:.2s;background:#FBFCFE;
+}
+.editor:focus{outline:none;border-color:var(--purple);background:#fff;box-shadow:0 0 0 4px var(--purple-soft)}
+
+.ws-actions{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;align-items:center}
+.btn-ai{
+  background:linear-gradient(135deg,var(--purple),#5B21B6);color:#fff;font-weight:800;
+  padding:15px 32px;border-radius:13px;font-size:.94rem;transition:.25s;
+  display:inline-flex;align-items:center;gap:10px;
+  box-shadow:0 12px 30px rgba(109,40,217,.35);
+}
+.btn-ai:hover{transform:translateY(-2px);box-shadow:0 16px 38px rgba(109,40,217,.45)}
+.btn-ai:disabled{opacity:.65;cursor:not-allowed;transform:none}
+.btn-outline{
+  background:#fff;color:var(--navy);border:1.5px solid var(--border);
+  padding:15px 24px;border-radius:13px;font-weight:700;font-size:.9rem;transition:.2s;
+}
+.btn-outline:hover{border-color:var(--navy)}
+.spacer{flex:1}
+
+/* ============ FEEDBACK ============ */
+.feedback{margin-top:26px;display:none}
+.feedback.show{display:block;animation:fade .4s ease}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+.loading-box{
+  display:none;align-items:center;gap:16px;padding:26px 30px;
+  background:var(--purple-soft);border-radius:16px;border:1px solid #DDD0FA;
+}
+.loading-box.show{display:flex}
+.spinner{
+  width:26px;height:26px;border-radius:50%;flex-shrink:0;
+  border:3px solid #D9C9F8;border-top-color:var(--purple);
+  animation:spin .8s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-box p{font-size:.9rem;font-weight:700;color:#5B21B6}
+
+.fb-card{
+  border:1px solid var(--border);border-radius:20px;overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.fb-hero{
+  display:flex;align-items:center;gap:30px;padding:32px;
+  background:linear-gradient(135deg,#FBF8FF,#F5F0FF);
+  border-bottom:1px solid #E9DFFB;flex-wrap:wrap;
+}
+.band-circle{
+  width:132px;height:132px;border-radius:50%;flex-shrink:0;
+  display:grid;place-items:center;position:relative;
+  background:conic-gradient(var(--c,var(--purple)) calc(var(--p,70) * 1%), #E9EDF3 0);
+  transition:.6s;
+}
+.band-circle::after{content:'';position:absolute;inset:11px;background:#fff;border-radius:50%}
+.band-inner{position:relative;z-index:1;text-align:center}
+.band-inner b{display:block;font-size:2.3rem;font-weight:900;color:var(--navy);letter-spacing:-1.5px;line-height:1}
+.band-inner small{font-size:.6rem;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted)}
+.fb-hero-text h3{font-size:1.35rem;font-weight:900;color:var(--navy);letter-spacing:-.5px;margin-bottom:6px}
+.fb-hero-text p{font-size:.9rem;color:var(--muted);max-width:520px}
+
+.crit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-bottom:1px solid var(--border)}
+.crit{padding:22px 20px;border-right:1px solid var(--border);text-align:center}
+.crit:last-child{border-right:none}
+.crit .cname{font-size:.68rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.crit .cscore{font-size:1.5rem;font-weight:900;color:var(--navy);letter-spacing:-.5px;margin-bottom:10px}
+.crit .cbar{height:6px;background:#EEF1F6;border-radius:100px;overflow:hidden}
+.crit .cfill{height:100%;border-radius:100px;width:0;transition:width 1s cubic-bezier(.2,.8,.2,1)}
+
+.stats-row{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  border-bottom:1px solid var(--border);background:#FBFCFE;
+}
+.stat-cell{padding:16px;text-align:center;border-right:1px solid var(--border)}
+.stat-cell:last-child{border-right:none}
+.stat-cell b{display:block;font-size:1.15rem;font-weight:900;color:var(--navy)}
+.stat-cell span{font-size:.7rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
+
+.fb-section{padding:26px 32px;border-bottom:1px solid var(--border)}
+.fb-section:last-child{border-bottom:none}
+.fb-section h4{
+  font-size:.95rem;font-weight:900;color:var(--navy);margin-bottom:16px;
+  display:flex;align-items:center;gap:10px;
+}
+.fb-section h4 .ico{
+  width:28px;height:28px;border-radius:9px;display:grid;place-items:center;font-size:.85rem;
+}
+.ico-good{background:var(--green-soft);color:var(--green)}
+.ico-warn{background:var(--amber-soft);color:var(--amber)}
+.ico-tip{background:var(--blue-soft);color:var(--blue)}
+
+.fb-list{display:flex;flex-direction:column;gap:11px}
+.fb-item{
+  display:flex;gap:12px;align-items:flex-start;font-size:.88rem;color:#475569;line-height:1.65;
+  padding:12px 16px;border-radius:11px;background:#FBFCFE;border:1px solid #EEF1F6;
+}
+.fb-item .bullet{flex-shrink:0;font-weight:900;font-size:.85rem;margin-top:1px}
+.b-good{color:var(--green)}
+.b-warn{color:var(--amber)}
+.b-tip{color:var(--blue)}
+.fb-item strong{color:var(--navy)}
+.fb-item code{
+  background:#F1F4F9;padding:2px 7px;border-radius:5px;font-size:.83rem;
+  font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--red-dark);font-weight:700;
+}
+
+/* Highlighted essay */
+.essay-preview{
+  background:#FBFCFE;border:1px solid var(--border);border-radius:12px;
+  padding:22px 24px;font-size:.9rem;line-height:1.9;color:#33415C;
+  max-height:300px;overflow-y:auto;white-space:pre-wrap;word-break:break-word;
+}
+.essay-preview mark{
+  background:#FDE1E6;color:var(--red-dark);border-bottom:2px solid var(--red);
+  padding:1px 3px;border-radius:4px;font-weight:700;cursor:help;
+}
+.essay-preview::-webkit-scrollbar{width:8px}
+.essay-preview::-webkit-scrollbar-thumb{background:#CFD8E3;border-radius:10px}
+
+/* ============ SAMPLES ============ */
+.samples-grid{display:flex;flex-direction:column;gap:20px}
+.sample{
+  background:#fff;border-radius:20px;border:1px solid var(--border);
+  box-shadow:var(--shadow);overflow:hidden;transition:.3s;
+}
+.sample:hover{box-shadow:var(--shadow-lg)}
+.sample-head{
+  display:flex;align-items:center;gap:16px;padding:22px 26px;
+  cursor:pointer;transition:.2s;flex-wrap:wrap;
+}
+.sample-head:hover{background:#FBFCFE}
+.band-badge{
+  padding:7px 16px;border-radius:100px;font-size:.78rem;font-weight:900;letter-spacing:.5px;
+  flex-shrink:0;
+}
+.band-6{background:var(--amber-soft);color:var(--amber)}
+.band-65{background:var(--blue-soft);color:var(--blue)}
+.band-7{background:var(--green-soft);color:#0F7A38}
+.sample-head h4{font-size:1.02rem;font-weight:800;color:var(--navy);flex:1;min-width:200px}
+.sample-meta{display:flex;gap:16px;font-size:.76rem;font-weight:700;color:var(--muted)}
+.sample-toggle{
+  width:34px;height:34px;border-radius:10px;background:var(--bg);
+  display:grid;place-items:center;color:var(--navy);font-weight:900;
+  transition:.3s;flex-shrink:0;font-size:.9rem;
+}
+.sample.open .sample-toggle{transform:rotate(180deg);background:var(--purple-soft);color:var(--purple)}
+.sample-body{display:none;padding:0 26px 26px}
+.sample.open .sample-body{display:block;animation:fade .35s ease}
+
+.sample-text{
+  background:#FBFCFE;border:1px solid var(--border);border-left:4px solid var(--purple);
+  border-radius:12px;padding:24px 26px;font-size:.92rem;line-height:1.95;color:#33415C;
+  margin-bottom:20px;
+}
+.sample-text p{margin-bottom:14px}
+.sample-text p:last-child{margin-bottom:0}
+.sample-text .marker{
+  display:inline-grid;place-items:center;width:19px;height:19px;border-radius:50%;
+  background:var(--purple);color:#fff;font-size:.62rem;font-weight:900;
+  vertical-align:super;margin:0 2px;line-height:1;
+}
+.anno-list{display:flex;flex-direction:column;gap:10px}
+.anno{
+  display:flex;gap:13px;align-items:flex-start;font-size:.85rem;color:#475569;line-height:1.65;
+  background:var(--purple-soft);padding:13px 17px;border-radius:11px;
+}
+.anno .n{
+  flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--purple);
+  color:#fff;display:grid;place-items:center;font-size:.7rem;font-weight:900;
+}
+.anno strong{color:var(--navy)}
+
+/* ============ PHRASE BANK ============ */
+.phrase-tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:32px}
+.ptab{
+  padding:10px 20px;border-radius:100px;font-size:.84rem;font-weight:800;
+  background:#fff;border:1.5px solid var(--border);color:var(--muted);transition:.22s;
+}
+.ptab:hover{border-color:var(--purple);color:var(--purple)}
+.ptab.active{background:var(--purple);border-color:var(--purple);color:#fff;box-shadow:0 8px 20px rgba(109,40,217,.28)}
+
+.phrase-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.phrase-card{
+  background:#fff;border:1px solid var(--border);border-radius:16px;
+  padding:20px 22px;transition:.25s;cursor:pointer;position:relative;
+  box-shadow:0 2px 8px rgba(11,27,51,.04);
+}
+.phrase-card:hover{border-color:var(--purple);transform:translateY(-3px);box-shadow:0 10px 26px rgba(109,40,217,.14)}
+.phrase-card .en{font-size:.92rem;font-weight:700;color:var(--navy);margin-bottom:7px;line-height:1.5}
+.phrase-card .vi{font-size:.82rem;color:var(--muted);line-height:1.55}
+.phrase-card .copy-hint{
+  position:absolute;top:14px;right:16px;font-size:.65rem;font-weight:800;
+  color:var(--purple);opacity:0;transition:.2s;letter-spacing:.5px;
+}
+.phrase-card:hover .copy-hint{opacity:1}
+
+/* ============ HISTORY ============ */
+.history-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.hist-card{
+  background:#fff;border:1px solid var(--border);border-radius:16px;padding:20px;
+  box-shadow:0 2px 10px rgba(11,27,51,.05);
+}
+.hist-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.hist-top .badge-sm{
+  font-size:.68rem;font-weight:800;padding:4px 11px;border-radius:100px;
+  background:var(--purple-soft);color:var(--purple);text-transform:uppercase;letter-spacing:.6px;
+}
+.hist-score{font-size:1.4rem;font-weight:900;color:var(--navy);letter-spacing:-.5px}
+.hist-snippet{font-size:.82rem;color:var(--muted);line-height:1.6;margin-bottom:12px;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.hist-date{font-size:.72rem;font-weight:700;color:#94A3B8}
+.empty-state{
+  text-align:center;padding:50px 20px;color:var(--muted);font-size:.9rem;
+  background:#fff;border:1.5px dashed var(--border);border-radius:16px;
+}
+
+/* ============ MISTAKES ============ */
+.mistakes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.mistake{
+  background:#fff;border:1px solid var(--border);border-radius:16px;padding:24px;
+  box-shadow:0 2px 10px rgba(11,27,51,.05);transition:.25s;
+}
+.mistake:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.mistake .wrong{
+  font-size:.88rem;font-weight:700;color:var(--red-dark);background:var(--red-soft);
+  padding:9px 14px;border-radius:9px;margin-bottom:11px;text-decoration:line-through;
+  text-decoration-color:rgba(200,16,46,.4);
+}
+.mistake .right{
+  font-size:.88rem;font-weight:700;color:#0F7A38;background:var(--green-soft);
+  padding:9px 14px;border-radius:9px;margin-bottom:14px;
+}
+.mistake p{font-size:.82rem;color:var(--muted);line-height:1.6}
+
+/* ============ TOAST ============ */
+.toast{
+  position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(120px);
+  background:var(--navy);color:#fff;padding:14px 26px;border-radius:13px;
+  font-size:.88rem;font-weight:700;box-shadow:0 16px 40px rgba(11,27,51,.35);
+  z-index:999;transition:transform .35s cubic-bezier(.2,.8,.2,1);
+  display:flex;align-items:center;gap:10px;pointer-events:none;
+}
+.toast.show{transform:translateX(-50%) translateY(0)}
+
+/* ============ CTA / FOOTER ============ */
+.cta{max-width:1240px;margin:0 auto 84px;padding:0 24px}
+.cta-box{
+  background:linear-gradient(135deg,var(--navy),var(--navy-2));
+  border-radius:28px;padding:60px 48px;text-align:center;position:relative;overflow:hidden;
+}
+.cta-box::before{
+  content:'';position:absolute;width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(109,40,217,.55),transparent 70%);
+  top:-180px;right:-100px;
+}
+.cta-box::after{
+  content:'';position:absolute;width:300px;height:300px;border-radius:50%;
+  background:radial-gradient(circle,rgba(200,16,46,.35),transparent 70%);
+  bottom:-150px;left:-80px;
+}
+.cta-box > *{position:relative;z-index:1}
+.cta-box h2{font-size:2.15rem;font-weight:900;color:#fff;letter-spacing:-1px;margin-bottom:14px}
+.cta-box p{color:#A8B6CC;max-width:520px;margin:0 auto 30px;font-size:1rem}
+
+footer{background:var(--navy);color:#8FA2BD;padding:52px 24px 30px}
+.foot-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px}
+.foot-brand .logo{color:#fff;margin-bottom:16px}
+.foot-brand p{font-size:.85rem;line-height:1.75;max-width:300px}
+.foot-col h5{color:#fff;font-size:.82rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.foot-col a{color:#8FA2BD;text-decoration:none;font-size:.85rem;transition:.2s}
+.foot-col a:hover{color:var(--gold)}
+.foot-bottom{
+  max-width:1240px;margin:38px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.09);
+  text-align:center;font-size:.78rem;
+}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;gap:40px}
+  .hero h1{font-size:2.5rem}
+  .crit-grid{grid-template-columns:repeat(2,1fr)}
+  .crit:nth-child(2){border-right:none}
+  .crit:nth-child(1),.crit:nth-child(2){border-bottom:1px solid var(--border)}
+  .stats-row{grid-template-columns:repeat(2,1fr)}
+  .stat-cell:nth-child(2){border-right:none}
+  .stat-cell:nth-child(1),.stat-cell:nth-child(2){border-bottom:1px solid var(--border)}
+  .mistakes-grid{grid-template-columns:repeat(2,1fr)}
+  .foot-inner{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none}
+  .burger{display:block}
+  .hero{padding:52px 20px 64px}
+  .hero h1{font-size:2.05rem;letter-spacing:-1px}
+  .section{padding:60px 20px}
+  .section-head h2{font-size:1.7rem}
+  .ws-body{padding:22px 18px}
+  .ws-top{padding:14px 18px}
+  .phrase-grid{grid-template-columns:1fr}
+  .mistakes-grid{grid-template-columns:1fr}
+  .fb-hero{padding:24px;gap:22px}
+  .band-circle{width:110px;height:110px}
+  .band-inner b{font-size:1.9rem}
+  .fb-section{padding:22px 20px}
+  .sample-head{padding:18px}
+  .sample-body{padding:0 18px 20px}
+  .cta-box{padding:42px 22px}
+  .cta-box h2{font-size:1.55rem}
+  .foot-inner{grid-template-columns:1fr}
+  .bar{width:16px}
+  .chart-legend{flex-direction:column;gap:8px}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-mark">W</div>
+      <span>Writing Studio<small>IELTS 5.5 → 6.5+</small></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#practice">Phòng luyện viết</a></li>
+      <li><a href="#samples">Bài mẫu</a></li>
+      <li><a href="#phrases">Phrase Bank</a></li>
+      <li><a href="#history">Lịch sử</a></li>
+    </ul>
+    <a href="#practice" class="nav-cta">Luyện viết ngay</a>
+    <button class="burger" onclick="document.getElementById('practice').scrollIntoView()">☰</button>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="badge"><span class="dot"></span> AI Writing Coach · Chấm & sửa bài tức thì</div>
+      <h1>Viết chuẩn IELTS, <span class="accent">sửa bởi AI</span> từng câu</h1>
+      <p class="lead">
+        Luyện Task 1 &amp; Task 2 với đồng hồ tính giờ như phòng thi thật.
+        Nhận phản hồi chi tiết theo 4 tiêu chí chấm điểm, phát hiện lỗi sai,
+        và học hỏi từ kho bài mẫu band 6.0 – 7.0.
+      </p>
+      <div class="hero-actions">
+        <a href="#practice" class="btn btn-primary">✍️ Bắt đầu viết bài</a>
+        <a href="#samples" class="btn btn-ghost">📚 Xem bài mẫu</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <h4>Tiêu chí chấm điểm IELTS Writing</h4>
+      <div class="mini-crit">
+        <div class="mini-crit-item">
+          <div class="top"><span>Task Achievement</span><span>25%</span></div>
+          <div class="mtrack"><div class="mfill" data-w="100%"></div></div>
+        </div>
+        <div class="mini-crit-item">
+          <div class="top"><span>Coherence &amp; Cohesion</span><span>25%</span></div>
+          <div class="mtrack"><div class="mfill" data-w="100%"></div></div>
+        </div>
+        <div class="mini-crit-item">
+          <div class="top"><span>Lexical Resource</span><span>25%</span></div>
+          <div class="mtrack"><div class="mfill" data-w="100%"></div></div>
+        </div>
+        <div class="mini-crit-item">
+          <div class="top"><span>Grammatical Range &amp; Accuracy</span><span>25%</span></div>
+          <div class="mtrack"><div class="mfill" data-w="100%"></div></div>
+        </div>
+      </div>
+      <div class="hero-note">
+        <span>🤖</span>
+        <div>AI Coach phân tích bài viết của bạn theo đúng 4 tiêu chí này và đưa ra band điểm ước tính kèm gợi ý cải thiện cụ thể.</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= PRACTICE ================= -->
+<section class="section" id="practice">
+  <div class="section-head">
+    <span class="eyebrow">Phòng luyện viết</span>
+    <h2>Viết bài &amp; nhận phản hồi từ AI</h2>
+    <p>Chọn Task 1 hoặc Task 2, viết bài trong thời gian quy định, sau đó nhấn "Chấm bài với AI" để nhận phân tích chi tiết.</p>
+  </div>
+
+  <div class="workspace">
+    <div class="ws-inner">
+
+      <div class="ws-top">
+        <div class="seg">
+          <button class="active" data-task="task2" onclick="switchTask('task2')">Task 2 · Essay</button>
+          <button data-task="task1" onclick="switchTask('task1')">Task 1 · Report</button>
+        </div>
+        <div class="timer-mini">
+          <span class="clock" id="clock">40:00</span>
+          <button class="tbtn play" id="timerBtn" onclick="toggleTimer()">▶ Bắt đầu</button>
+          <button class="tbtn" onclick="resetTimer()">↺</button>
+        </div>
+      </div>
+
+      <div class="ws-body">
+
+        <!-- PROMPT -->
+        <div class="prompt-box" id="promptBox">
+          <span class="tag" id="promptTag">Task 2 · 40 phút · ≥ 250 từ</span>
+          <p id="promptText">
+            Some people believe that governments should invest more money in public transport
+            than in building new roads. To what extent do you agree or disagree with this view?
+          </p>
+          <div class="hint" id="promptHint">
+            💡 Gợi ý: Nêu rõ quan điểm ở mở bài → 2 thân bài với lý lẽ + ví dụ → kết bài khẳng định lại.
+          </div>
+
+          <!-- Task 1 chart -->
+          <div class="chart" id="task1Chart" style="display:none">
+            <div class="chart-title">Phương thức di chuyển của người dân thành thị (%)</div>
+            <div class="chart-sub">So sánh năm 2000 và 2020</div>
+            <div class="chart-legend">
+              <span><i class="lg2000"></i> Năm 2000</span>
+              <span><i class="lg2020"></i> Năm 2020</span>
+            </div>
+            <div class="chart-bars" id="chartBars">
+              <!-- rendered by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- EDITOR -->
+        <div class="editor-head">
+          <h4>Bài viết của bạn</h4>
+          <div class="wordcount" id="wordcount">Số từ: <b>0</b> / 250 tối thiểu</div>
+        </div>
+        <textarea class="editor" id="editor"
+          placeholder="Bắt đầu viết bài của bạn tại đây...&#10;&#10;Mẹo:&#10;• Mỗi đoạn cách nhau bằng 1 dòng trống&#10;• Dùng linking words: However, Moreover, Therefore, In conclusion...&#10;• Tránh lặp từ — dùng từ đồng nghĩa&#10;• Kiểm tra số từ trước khi nộp"></textarea>
+
+        <div class="ws-actions">
+          <button class="btn-ai" id="aiBtn" onclick="runAI()">
+            <span>🤖</span> Chấm bài với AI
+          </button>
+          <button class="btn-outline" onclick="clearEssay()">↺ Xoá bài</button>
+          <div class="spacer"></div>
+          <button class="btn-outline" onclick="document.getElementById('samples').scrollIntoView({behavior:'smooth'})">📚 Xem bài mẫu</button>
+        </div>
+
+        <!-- LOADING -->
+        <div class="loading-box" id="loadingBox">
+          <div class="spinner"></div>
+          <p>AI đang phân tích bài viết của bạn...</p>
+        </div>
+
+        <!-- FEEDBACK -->
+        <div class="feedback" id="feedback"></div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SAMPLES ================= -->
+<section class="section" id="samples" style="padding-top:0">
+  <div class="section-head">
+    <span class="eyebrow">Học từ bài mẫu</span>
+    <h2>Bài viết mẫu có chú thích</h2>
+    <p>Đọc các bài mẫu band 6.0 – 7.0 kèm chú thích chi tiết để hiểu vì sao chúng đạt điểm cao và học cách áp dụng.</p>
+  </div>
+
+  <div class="samples-grid">
+
+    <!-- SAMPLE 1 -->
+    <div class="sample" id="sample1">
+      <div class="sample-head" onclick="toggleSample('sample1')">
+        <span class="band-badge band-6">Band 6.0</span>
+        <h4>Task 2 — Public Transport vs New Roads</h4>
+        <div class="sample-meta">
+          <span>271 từ</span>
+          <span>4 đoạn</span>
+        </div>
+        <div class="sample-toggle">▾</div>
+      </div>
+      <div class="sample-body">
+        <div class="sample-text">
+          <p><span class="marker">1</span>Nowadays, traffic congestion is a serious problem in many cities. Some people argue that the government should spend more money on public transport instead of building new roads. In my opinion, I agree with this view because public transport is better for the environment and it can reduce traffic jams.</p>
+          <p><span class="marker">2</span>Firstly, public transport is more environmentally friendly than private cars. For example, one bus can carry fifty passengers, but fifty cars need much more fuel and produce a lot of pollution. Therefore, if more people use buses and trains, the air quality will improve significantly. This is very important for the health of people living in cities.</p>
+          <p><span class="marker">3</span>Secondly, investing in public transport can reduce traffic congestion. When people use trains or buses, there are fewer cars on the road. As a result, the roads are less crowded and everyone can travel faster. In addition, public transport is cheaper for citizens, especially for students and old people who cannot afford to buy a car.</p>
+          <p><span class="marker">4</span>However, some people think that building new roads is also necessary. They believe that wider roads can solve traffic problems quickly. In my view, this is not a good solution because more roads attract more cars, and the problem will come back after a few years.</p>
+          <p><span class="marker">5</span>In conclusion, I strongly believe that governments should invest more in public transport. This will protect the environment and reduce traffic congestion in the long term.</p>
+        </div>
+        <div class="anno-list">
+          <div class="anno"><span class="n">1</span><div><strong>Mở bài tốt:</strong> Paraphrase đề rõ ràng và nêu quan điểm ngay. Tuy nhiên "In my opinion, I agree" bị lặp ý — chỉ cần "In my opinion, ..." hoặc "I agree ...".</div></div>
+          <div class="anno"><span class="n">2</span><div><strong>Linking words cơ bản:</strong> Firstly, Therefore, Secondly, As a result, In addition, However, In conclusion — đủ để đạt Coherence 6.0.</div></div>
+          <div class="anno"><span class="n">3</span><div><strong>Cần cải thiện:</strong> "very important" và "a lot of pollution" còn đơn giản. Band 6.5+ nên dùng <em>crucial / vital / substantial amounts of pollution</em>.</div></div>
+          <div class="anno"><span class="n">4</span><div><strong>Đoạn nhượng bộ:</strong> Có phản biện ("However...") — đây là điểm cộng cho Task Response vì thể hiện tư duy hai chiều.</div></div>
+          <div class="anno"><span class="n">5</span><div><strong>Kết bài:</strong> Tóm tắt được quan điểm, nhưng chưa mở rộng. Có thể thêm 1 câu khuyến nghị để đạt band cao hơn.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAMPLE 2 -->
+    <div class="sample" id="sample2">
+      <div class="sample-head" onclick="toggleSample('sample2')">
+        <span class="band-badge band-7">Band 7.0</span>
+        <h4>Task 2 — Public Transport vs New Roads</h4>
+        <div class="sample-meta">
+          <span>294 từ</span>
+          <span>5 đoạn</span>
+        </div>
+        <div class="sample-toggle">▾</div>
+      </div>
+      <div class="sample-body">
+        <div class="sample-text">
+          <p><span class="marker">1</span>It is often argued that governments should prioritise investment in public transport over the construction of new roads. While I acknowledge that road expansion can bring short-term benefits, I strongly believe that allocating a larger share of the budget to public transport is the more sustainable and equitable choice.</p>
+          <p><span class="marker">2</span>The primary reason for this view is environmental. Private vehicles are a major source of carbon emissions and air pollution in urban areas. By contrast, a single bus or train can transport dozens of passengers while producing a fraction of the emissions per person. Consequently, shifting commuters from cars to public transport would substantially reduce a city's carbon footprint and improve public health.</p>
+          <p><span class="marker">3</span>A second argument concerns long-term efficiency. Building new roads is often presented as a quick fix for congestion; however, evidence from numerous cities suggests that additional road capacity simply attracts more traffic — a phenomenon known as induced demand. Investing in a reliable metro or bus network, on the other hand, offers a lasting solution because it moves large numbers of people using far less space.</p>
+          <p><span class="marker">4</span>Admittedly, some commuters, particularly those in rural or suburban areas, depend heavily on private cars, and for them better roads remain essential. Nevertheless, this does not justify making road construction the priority for the majority of urban residents.</p>
+          <p><span class="marker">5</span>In conclusion, although new roads may offer short-term relief, I firmly believe that governments should invest primarily in public transport. Doing so would deliver environmental benefits, reduce congestion more effectively in the long run, and create a fairer transport system for all citizens.</p>
+        </div>
+        <div class="anno-list">
+          <div class="anno"><span class="n">1</span><div><strong>Cấu trúc nhượng bộ mạnh:</strong> "While I acknowledge..., I strongly believe..." — thể hiện tư duy phản biện, đây là dấu hiệu của Task Response band 7.</div></div>
+          <div class="anno"><span class="n">2</span><div><strong>Từ vựng học thuật:</strong> prioritise, allocating, sustainable, equitable, emissions, carbon footprint — nâng band Lexical Resource lên 7.0.</div></div>
+          <div class="anno"><span class="n">3</span><div><strong>Câu phức đa dạng:</strong> Mệnh đề quan hệ rút gọn ("a phenomenon known as induced demand"), câu ghép với "while", "because". Tăng Grammatical Range.</div></div>
+          <div class="anno"><span class="n">4</span><div><strong>Đoạn nhượng bộ:</strong> "Admittedly... Nevertheless..." — thừa nhận mặt trái rồi phản biện, rất hiệu quả để đạt band 7.</div></div>
+          <div class="anno"><span class="n">5</span><div><strong>Kết bài ba lớp:</strong> Khẳng định quan điểm + liệt kê 3 lợi ích cụ thể. Tránh được lỗi "kết bài lặp lại mở bài".</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAMPLE 3 -->
+    <div class="sample" id="sample3">
+      <div class="sample-head" onclick="toggleSample('sample3')">
+        <span class="band-badge band-65">Band 6.5</span>
+        <h4>Task 1 — Bar Chart: Transport Modes</h4>
+        <div class="sample-meta">
+          <span>196 từ</span>
+          <span>5 đoạn</span>
+        </div>
+        <div class="sample-toggle">▾</div>
+      </div>
+      <div class="sample-body">
+        <div class="sample-text">
+          <p><span class="marker">1</span>The bar chart compares the percentage of commuters using five different modes of transport in a city in 2000 and 2020.</p>
+          <p><span class="marker">2</span>Overall, the car was the most popular means of transport in both years, although its share declined considerably. By contrast, the proportions of people using trains and bicycles increased noticeably over the period.</p>
+          <p><span class="marker">3</span>In 2000, just over half of commuters (52%) travelled by car, making it by far the dominant mode. However, by 2020 this figure had fallen to 38%. The proportion of people using buses remained relatively stable, rising slightly from 24% to 26%.</p>
+          <p><span class="marker">4</span>Train use saw the most significant growth, climbing from 14% in 2000 to 22% in 2020, a rise of eight percentage points. Similarly, the percentage of commuters cycling to work almost doubled, from 6% to 11%. In contrast, the proportion of people walking fell marginally, from 4% to 3%, making it the least common method of transport in both years.</p>
+          <p><span class="marker">5</span>In summary, while cars remained the most widely used form of transport, the period witnessed a clear shift towards more sustainable alternatives such as trains and bicycles.</p>
+        </div>
+        <div class="anno-list">
+          <div class="anno"><span class="n">1</span><div><strong>Câu mở đầu:</strong> Paraphrase đề — nêu rõ loại biểu đồ, đối tượng và thời gian. Không copy nguyên đề.</div></div>
+          <div class="anno"><span class="n">2</span><div><strong>Overview bắt buộc:</strong> "Overall" + 2 xu hướng chính. Đây là phần quan trọng nhất của Task 1 — thiếu overview sẽ mất điểm Task Achievement.</div></div>
+          <div class="anno"><span class="n">3</span><div><strong>Trích dẫn số liệu:</strong> Có đơn vị %, có so sánh ("just over half"). Dùng "by far the dominant mode" — collocation tốt.</div></div>
+          <div class="anno"><span class="n">4</span><div><strong>Đa dạng cách diễn đạt:</strong> "a rise of eight percentage points", "almost doubled", "climbing", "fell marginally" — tránh lặp "increased/decreased".</div></div>
+          <div class="anno"><span class="n">5</span><div><strong>Kết bài:</strong> Tóm tắt xu hướng chính, không thêm thông tin mới — đúng chuẩn Task 1.</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= PHRASE BANK ================= -->
+<section class="section" id="phrases" style="padding-top:0">
+  <div class="section-head">
+    <span class="eyebrow">Kho từ vựng &amp; mẫu câu</span>
+    <h2>Phrase Bank</h2>
+    <p>Nhấn vào thẻ bất kỳ để sao chép vào clipboard và dùng ngay trong bài viết của bạn.</p>
+  </div>
+
+  <div class="phrase-tabs">
+    <button class="ptab active" data-cat="intro" onclick="switchPhrase('intro')">Mở bài</button>
+    <button class="ptab" data-cat="opinion" onclick="switchPhrase('opinion')">Nêu quan điểm</button>
+    <button class="ptab" data-cat="body" onclick="switchPhrase('body')">Thân bài</button>
+    <button class="ptab" data-cat="concession" onclick="switchPhrase('concession')">Nhượng bộ</button>
+    <button class="ptab" data-cat="conclusion" onclick="switchPhrase('conclusion')">Kết bài</button>
+    <button class="ptab" data-cat="task1" onclick="switchPhrase('task1')">Task 1</button>
+  </div>
+
+  <div class="phrase-grid" id="phraseGrid"></div>
+</section>
+
+<!-- ================= MISTAKES ================= -->
+<section class="section" style="padding-top:0">
+  <div class="section-head">
+    <span class="eyebrow">Tránh mất điểm</span>
+    <h2>6 lỗi thường gặp ở band 5.5</h2>
+    <p>Sửa những lỗi này có thể giúp bạn tăng 0.5–1.0 band Writing ngay lập tức.</p>
+  </div>
+
+  <div class="mistakes-grid">
+    <div class="mistake">
+      <div class="wrong">✗ In nowadays, people...</div>
+      <div class="right">✓ Nowadays, people...</div>
+      <p>"Nowadays" đã là trạng từ chỉ thời gian, không cần giới từ "in" đứng trước.</p>
+    </div>
+    <div class="mistake">
+      <div class="wrong">✗ Many peoples / informations</div>
+      <div class="right">✓ Many people / information</div>
+      <p>Danh từ không đếm được (information, advice, knowledge) không có dạng số nhiều.</p>
+    </div>
+    <div class="mistake">
+      <div class="wrong">✗ In my opinion, I think that...</div>
+      <div class="right">✓ In my opinion, ... / I believe that...</div>
+      <p>Không dùng hai cụm nêu quan điểm liên tiếp — sẽ bị coi là lặp ý.</p>
+    </div>
+    <div class="mistake">
+      <div class="wrong">✗ The most biggest problem</div>
+      <div class="right">✓ The biggest problem</div>
+      <p>Không dùng "most" trước tính từ đã ở dạng so sánh nhất.</p>
+    </div>
+    <div class="mistake">
+      <div class="wrong">✗ I very like this idea</div>
+      <div class="right">✓ I really like this idea</div>
+      <p>"Very" không đứng trước động từ — dùng "really", "strongly", "particularly".</p>
+    </div>
+    <div class="mistake">
+      <div class="wrong">✗ There are many reason why...</div>
+      <div class="right">✓ There are many reasons why...</div>
+      <p>Lỗi chia số nhiều — "many" luôn đi với danh từ đếm được số nhiều.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HISTORY ================= -->
+<section class="section" id="history" style="padding-top:0">
+  <div class="section-head">
+    <span class="eyebrow">Theo dõi tiến bộ</span>
+    <h2>Lịch sử luyện viết</h2>
+    <p>Các bài viết đã chấm được lưu tự động trên trình duyệt của bạn.</p>
+  </div>
+  <div id="historyList"></div>
+</section>
+
+<!-- ================= CTA ================= -->
+<div class="cta">
+  <div class="cta-box">
+    <h2>Viết mỗi ngày, tiến bộ mỗi tuần</h2>
+    <p>Luyện 1 bài Task 2 mỗi ngày trong 8 tuần — AI Coach sẽ giúp bạn nhận ra lỗi sai và cải thiện band điểm nhanh chóng.</p>
+    <a href="#practice" class="btn btn-primary">✍️ Viết bài đầu tiên ngay</a>
+  </div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <div class="logo">
+        <div class="logo-mark">W</div>
+        <span style="color:#fff">Writing Studio<small style="color:#8FA2BD">IELTS 5.5 → 6.5+</small></span>
+      </div>
+      <p>Nền tảng luyện viết IELTS với AI Coach chấm bài chi tiết, kho bài mẫu có chú thích và hệ thống phrase bank phong phú.</p>
+    </div>
+    <div class="foot-col">
+      <h5>Luyện tập</h5>
+      <ul>
+        <li><a href="#practice">Task 1 · Report</a></li>
+        <li><a href="#practice">Task 2 · Essay</a></li>
+        <li><a href="#samples">Bài mẫu</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Tài nguyên</h5>
+      <ul>
+        <li><a href="#phrases">Phrase Bank</a></li>
+        <li><a href="#history">Lịch sử luyện viết</a></li>
+        <li><a href="#">Lỗi thường gặp</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Hỗ trợ</h5>
+      <ul>
+        <li><a href="#">Hướng dẫn sử dụng</a></li>
+        <li><a href="#">Liên hệ</a></li>
+        <li><a href="#">Câu hỏi thường gặp</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">© 2024 IELTS Writing Studio. Thiết kế chuẩn format IELTS quốc tế.</div>
+</footer>
+
+<div class="toast" id="toast">✓ Đã sao chép</div>
+
+<script>
+/* =====================================================
+   DATA
+===================================================== */
+const PROMPTS = {
+  task2: {
+    tag: 'Task 2 · 40 phút · ≥ 250 từ',
+    text: 'Some people believe that governments should invest more money in public transport than in building new roads. To what extent do you agree or disagree with this view?',
+    hint: '💡 Gợi ý: Nêu rõ quan điểm ở mở bài → 2 thân bài với lý lẽ + ví dụ → kết bài khẳng định lại.',
+    minWords: 250,
+    seconds: 40 * 60
+  },
+  task1: {
+    tag: 'Task 1 · 20 phút · ≥ 150 từ',
+    text: 'The bar chart below shows the percentage of commuters using five different modes of transport in a city in 2000 and 2020. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.',
+    hint: '💡 Gợi ý: Mở bài paraphrase → Overview (2 xu hướng chính) → 2 đoạn thân bài trích số liệu → không nêu quan điểm cá nhân.',
+    minWords: 150,
+    seconds: 20 * 60
+  }
+};
+
+const CHART_DATA = [
+  { label: 'Car',     y2000: 52, y2020: 38 },
+  { label: 'Bus',     y2000: 24, y2020: 26 },
+  { label: 'Train',   y2000: 14, y2020: 22 },
+  { label: 'Bicycle', y2000: 6,  y2020: 11 },
+  { label: 'Walking', y2000: 4,  y2020: 3  }
+];
+
+const LINKERS = [
+  'however','moreover','furthermore','in addition','therefore','consequently',
+  'nevertheless','on the other hand','in contrast','by contrast','for instance',
+  'for example','as a result','in conclusion','to conclude','firstly','first of all',
+  'secondly','finally','although','whereas','while','despite','because','since',
+  'thus','hence','also','besides','similarly','likewise','in particular','notably',
+  'meanwhile','ultimately','in my opinion','from my perspective','overall','to sum up',
+  'admittedly','in other words','as a consequence'
+];
+
+const ACADEMIC = [
+  'significant','substantial','consequently','fundamental','phenomenon','analyse','assess',
+  'benefit','challenge','contribute','demonstrate','economy','environment','establish',
+  'evidence','factor','impact','implement','individual','infrastructure','investment',
+  'issue','maintain','negative','objective','perspective','positive','potential','priority',
+  'promote','reduce','require','research','resources','respond','role','sector','strategy',
+  'sustainable','technology','trend','approach','advantage','disadvantage','opportunity',
+  'responsibility','solution','measure','policy','society','government','education','health',
+  'equitable','allocate','emission','congestion','commuter','urban','rural','efficiency'
+];
+
+const STOPWORDS = new Set(['the','a','an','and','or','but','if','then','than','that','this','these','those','is','are','was','were','be','been','being','to','of','in','on','at','for','with','by','from','as','it','its','they','them','their','there','here','we','our','you','your','i','my','me','he','she','his','her','not','no','do','does','did','have','has','had','will','would','can','could','should','may','might','must','so','such','very','more','most','much','many','some','any','all','each','every','both','few','other','another','also','just','only','about','into','over','under','between','through','during','before','after','up','down','out','off','again','further','once','when','where','why','how','what','which','who','whom','whose','because','while','although','however','therefore','thus','hence','moreover','furthermore','additionally']);
+
+const ERROR_PATTERNS = [
+  { re: /\bin nowadays\b/gi,                    fix: 'Nowadays',        msg: 'Bỏ "in" trước "nowadays".' },
+  { re: /\bpeoples\b/gi,                        fix: 'people',          msg: '"People" là danh từ số nhiều, không thêm "s".' },
+  { re: /\binformations\b/gi,                   fix: 'information',     msg: '"Information" không đếm được, không có dạng số nhiều.' },
+  { re: /\badvices\b/gi,                        fix: 'advice',          msg: '"Advice" không đếm được, không thêm "s".' },
+  { re: /\bknowledges\b/gi,                     fix: 'knowledge',       msg: '"Knowledge" không đếm được.' },
+  { re: /\bchilds\b/gi,                         fix: 'children',        msg: 'Số nhiều của "child" là "children".' },
+  { re: /\bcan not\b/gi,                        fix: 'cannot',          msg: 'Viết liền "cannot" trong văn viết trang trọng.' },
+  { re: /\bmorover\b/gi,                        fix: 'moreover',        msg: 'Lỗi chính tả: "moreover".' },
+  { re: /\btherefor\b/gi,                       fix: 'therefore',       msg: 'Lỗi chính tả: "therefore".' },
+  { re: /\bbecouse\b/gi,                        fix: 'because',         msg: 'Lỗi chính tả: "because".' },
+  { re: /\bdefinately\b/gi,                     fix: 'definitely',      msg: 'Lỗi chính tả: "definitely".' },
+  { re: /\bwich\b/gi,                           fix: 'which',           msg: 'Lỗi chính tả: "which".' },
+  { re: /\bgoverment\b/gi,                      fix: 'government',      msg: 'Lỗi chính tả: "government".' },
+  { re: /\benviroment\b/gi,                     fix: 'environment',     msg: 'Lỗi chính tả: "environment".' },
+  { re: /\bresponsability\b/gi,                 fix: 'responsibility',  msg: 'Lỗi chính tả: "responsibility".' },
+  { re: /\bopurtunity\b/gi,                     fix: 'opportunity',     msg: 'Lỗi chính tả: "opportunity".' },
+  { re: /\bknowlege\b/gi,                       fix: 'knowledge',       msg: 'Lỗi chính tả: "knowledge".' },
+  { re: /\btecnology\b/gi,                      fix: 'technology',      msg: 'Lỗi chính tả: "technology".' },
+  { re: /\bthe most biggest\b/gi,               fix: 'the biggest',     msg: 'Không dùng "most" trước so sánh nhất.' },
+  { re: /\bmore better\b/gi,                    fix: 'better',          msg: 'Không dùng "more" trước so sánh hơn.' },
+  { re: /\bvery like\b/gi,                      fix: 'really like',     msg: '"Very" không đứng trước động từ.' },
+  { re: /\bin my opinion,?\s+i (think|agree|believe)\b/gi,
+    fix: 'In my opinion, ...',                  msg: 'Không lặp hai cụm nêu quan điểm liên tiếp.' },
+  { re: /\bthere is\s+(many|a lot of|several)\b/gi,
+    fix: 'there are ...',                       msg: 'Dùng "there are" với danh từ số nhiều.' },
+  { re: /\s{2,}/g,                              fix: ' ',               msg: 'Có khoảng trắng thừa.' },
+  { re: /\s+([,.!?;:])/g,                       fix: '$1',              msg: 'Không đặt dấu câu sau khoảng trắng.' }
+];
+
+const PHRASES = {
+  intro: [
+    { en: 'It is often argued that ...', vi: 'Người ta thường tranh luận rằng ...' },
+    { en: 'In recent years, there has been growing concern about ...', vi: 'Trong những năm gần đây, ngày càng có nhiều lo ngại về ...' },
+    { en: 'While some people believe that ..., others argue that ...', vi: 'Trong khi một số người tin rằng ..., những người khác lại cho rằng ...' },
+    { en: 'The issue of ... has attracted considerable public attention.', vi: 'Vấn đề ... đã thu hút sự chú ý đáng kể của công chúng.' },
+    { en: 'This essay will examine both sides of the argument before reaching a conclusion.', vi: 'Bài luận này sẽ xem xét cả hai mặt của vấn đề trước khi đi đến kết luận.' }
+  ],
+  opinion: [
+    { en: 'I strongly believe that ...', vi: 'Tôi tin tưởng mạnh mẽ rằng ...' },
+    { en: 'From my perspective, ...', vi: 'Theo quan điểm của tôi, ...' },
+    { en: 'I am firmly convinced that ...', vi: 'Tôi hoàn toàn bị thuyết phục rằng ...' },
+    { en: 'While I acknowledge that ..., I would argue that ...', vi: 'Mặc dù tôi thừa nhận rằng ..., tôi vẫn cho rằng ...' },
+    { en: 'In my view, the benefits clearly outweigh the drawbacks.', vi: 'Theo tôi, lợi ích rõ ràng lớn hơn hạn chế.' }
+  ],
+  body: [
+    { en: 'The primary reason for this is that ...', vi: 'Lý do chính cho điều này là ...' },
+    { en: 'A further consideration is that ...', vi: 'Một yếu tố cần cân nhắc thêm là ...' },
+    { en: 'This can be illustrated by the fact that ...', vi: 'Điều này có thể được minh hoạ bởi thực tế rằng ...' },
+    { en: 'A clear example of this can be seen in ...', vi: 'Một ví dụ rõ ràng về điều này có thể thấy ở ...' },
+    { en: 'As a consequence, ...', vi: 'Kết quả là, ...' },
+    { en: 'This, in turn, leads to ...', vi: 'Điều này, đến lượt nó, dẫn đến ...' }
+  ],
+  concession: [
+    { en: 'Admittedly, ...', vi: 'Phải thừa nhận rằng, ...' },
+    { en: 'It is true that ...; however, ...', vi: 'Đúng là ...; tuy nhiên, ...' },
+    { en: 'Opponents of this view might argue that ...', vi: 'Những người phản đối quan điểm này có thể lập luận rằng ...' },
+    { en: 'Nevertheless, this does not mean that ...', vi: 'Tuy nhiên, điều này không có nghĩa là ...' },
+    { en: 'While this argument has some merit, it overlooks ...', vi: 'Mặc dù lập luận này có phần hợp lý, nó bỏ qua ...' }
+  ],
+  conclusion: [
+    { en: 'In conclusion, I firmly believe that ...', vi: 'Tóm lại, tôi tin chắc rằng ...' },
+    { en: 'To sum up, the advantages of ... far outweigh ...', vi: 'Tóm lại, lợi ích của ... vượt trội hơn nhiều so với ...' },
+    { en: 'On balance, it seems reasonable to conclude that ...', vi: 'Cân nhắc tổng thể, có vẻ hợp lý khi kết luận rằng ...' },
+    { en: 'It is therefore recommended that governments should ...', vi: 'Do đó, đề xuất rằng chính phủ nên ...' },
+    { en: 'Ultimately, the decision should be based on ...', vi: 'Cuối cùng, quyết định nên dựa trên ...' }
+  ],
+  task1: [
+    { en: 'The bar chart compares ... in terms of ...', vi: 'Biểu đồ cột so sánh ... về mặt ...' },
+    { en: 'Overall, it is clear that ...', vi: 'Nhìn chung, rõ ràng là ...' },
+    { en: 'The most striking feature is that ...', vi: 'Đặc điểm nổi bật nhất là ...' },
+    { en: 'X saw the most significant growth, climbing from ... to ...', vi: 'X chứng kiến mức tăng đáng kể nhất, tăng từ ... lên ...' },
+    { en: 'By contrast, the proportion of ... fell marginally.', vi: 'Ngược lại, tỷ lệ ... giảm nhẹ.' },
+    { en: 'The figure for X remained relatively stable at around ...%', vi: 'Con số của X vẫn tương đối ổn định ở khoảng ...%' }
+  ]
+};
+
+const SAMPLE_ESSAYS = {
+  task2: {
+    band6: "Nowadays, traffic congestion is a serious problem in many cities. Some people argue that the government should spend more money on public transport instead of building new roads. In my opinion, I agree with this view because public transport is better for the environment and it can reduce traffic jams.\n\nFirstly, public transport is more environmentally friendly than private cars. For example, one bus can carry fifty passengers, but fifty cars need much more fuel and produce a lot of pollution. Therefore, if more people use buses and trains, the air quality will improve significantly.\n\nIn conclusion, I strongly believe that governments should invest more in public transport.",
+    band7: "It is often argued that governments should prioritise investment in public transport over the construction of new roads. While I acknowledge that road expansion can bring short-term benefits, I strongly believe that allocating a larger share of the budget to public transport is the more sustainable and equitable choice.\n\nThe primary reason for this view is environmental. Private vehicles are a major source of carbon emissions and air pollution in urban areas. Consequently, shifting commuters from cars to public transport would substantially reduce a city's carbon footprint."
+  }
+};
+
+/* =====================================================
+   STATE
+===================================================== */
+let currentTask = 'task2';
+let timerState = { remaining: 40 * 60, total: 40 * 60, running: false, interval: null };
+
+/* =====================================================
+   CHART RENDER
+===================================================== */
+function renderChart() {
+  const el = document.getElementById('chartBars');
+  if (!el) return;
+  el.innerHTML = CHART_DATA.map(d => `
+    <div class="bar-group">
+      <div class="bar-pair">
+        <div class="bar b2000" data-h="${d.y2000}" style="height:0"><span>${d.y2000}%</span></div>
+        <div class="bar b2020" data-h="${d.y2020}" style="height:0"><span>${d.y2020}%</span></div>
+      </div>
+      <div class="bar-label">${d.label}</div>
+    </div>
+  `).join('');
+  setTimeout(() => {
+    el.querySelectorAll('.bar').forEach(b => {
+      b.style.height = b.dataset.h + '%';
+    });
+  }, 300);
+}
+
+/* =====================================================
+   TASK SWITCH
+===================================================== */
+function switchTask(task) {
+  currentTask = task;
+  document.querySelectorAll('.seg button').forEach(b => {
+    b.classList.toggle('active', b.dataset.task === task);
+  });
+  const p = PROMPTS[task];
+  document.getElementById('promptTag').textContent = p.tag;
+  document.getElementById('promptText').textContent = p.text;
+  document.getElementById('promptHint').textContent = p.hint;
+
+  const chart = document.getElementById('task1Chart');
+  if (task === 'task1') {
+    chart.style.display = 'block';
+    renderChart();
+  } else {
+    chart.style.display = 'none';
+  }
+
+  // reset timer
+  resetTimer();
+  updateWordcount();
+  document.getElementById('feedback').classList.remove('show');
+}
+
+/* =====================================================
+   TIMER
+===================================================== */
+function renderTimer() {
+  const m = Math.floor(timerState.remaining / 60);
+  const s = timerState.remaining % 60;
+  const clock = document.getElementById('clock');
+  const btn = document.getElementById('timerBtn');
+  clock.textContent = String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+  clock.classList.toggle('warn', timerState.remaining <= 60);
+  btn.textContent = timerState.running ? '⏸ Tạm dừng' : '▶ Bắt đầu';
+  btn.classList.toggle('running', timerState.running);
+}
+
+function toggleTimer() {
+  if (timerState.running) {
+    clearInterval(timerState.interval);
+    timerState.interval = null;
+    timerState.running = false;
+    renderTimer();
+    return;
+  }
+  if (timerState.remaining <= 0) return;
+  timerState.running = true;
+  timerState.interval = setInterval(() => {
+    timerState.remaining--;
+    if (timerState.remaining <= 0) {
+      timerState.remaining = 0;
+      clearInterval(timerState.interval);
+      timerState.interval = null;
+      timerState.running = false;
+    }
+    renderTimer();
+  }, 1000);
+  renderTimer();
+}
+
+function resetTimer() {
+  clearInterval(timerState.interval);
+  timerState.interval = null;
+  timerState.running = false;
+  const total = PROMPTS[currentTask].seconds;
+  timerState.remaining = total;
+  timerState.total = total;
+  renderTimer();
+}
+
+/* =====================================================
+   WORD COUNT
+===================================================== */
+const editor = document.getElementById('editor');
+const wordcount = document.getElementById('wordcount');
+
+function countWords(text) {
+  const t = text.trim();
+  return t ? t.split(/\s+/).filter(w => w.length > 0).length : 0;
+}
+
+function updateWordcount() {
+  const n = countWords(editor.value);
+  const min = PROMPTS[currentTask].minWords;
+  wordcount.innerHTML = `Số từ: <b>${n}</b> / ${min} tối thiểu`;
+  wordcount.classList.toggle('ok', n >= min);
+  wordcount.classList.toggle('low', n > 0 && n < min);
+}
+
+editor.addEventListener('input', updateWordcount);
+
+/* =====================================================
+   ERROR DETECTION
+===================================================== */
+function findErrors(text) {
+  const found = [];
+  ERROR_PATTERNS.forEach(p => {
+    const re = new RegExp(p.re.source, p.re.flags.includes('g') ? p.re.flags : p.re.flags + 'g');
+    let m;
+    while ((m = re.exec(text)) !== null) {
+      if (m[0].length === 0) { re.lastIndex++; continue; }
+      found.push({
+        index: m.index,
+        length: m[0].length,
+        text: m[0],
+        fix: p.fix,
+        msg: p.msg
+      });
+      if (m.index === re.lastIndex) re.lastIndex++;
+    }
+  });
+  // merge overlapping
+  found.sort((a, b) => a.index - b.index);
+  const merged = [];
+  let lastEnd = -1;
+  found.forEach(e => {
+    if (e.index >= lastEnd) {
+      merged.push(e);
+      lastEnd = e.index + e.length;
+    }
+  });
+  return merged;
+}
+
+function renderHighlighted(text, errors) {
+  const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  let out = '';
+  let cursor = 0;
+  errors.forEach(e => {
+    out += esc(text.slice(cursor, e.index));
+    const raw = text.substr(e.index, e.length);
+    out += `<mark title="${esc(e.msg)} → ${esc(e.fix)}">${esc(raw)}</mark>`;
+    cursor = e.index + e.length;
+  });
+  out += esc(text.slice(cursor));
+  return out;
+}
+
+/* =====================================================
+   ANALYZER
+===================================================== */
+function analyzeEssay(text, taskType) {
+  const minWords = taskType === 'task2' ? 250 : 150;
+  const words = text.trim() ? text.trim().split(/\s+/).filter(w => w) : [];
+  const wordCount = words.length;
+
+  const sentenceArr = text.split(/[.!?]+/).map(s => s.trim()).filter(s => s.length > 2);
+  const sentenceCount = Math.max(sentenceArr.length, 1);
+
+  const paraArr = text.split(/\n+/).map(p => p.trim()).filter(p => p.length > 15);
+  const paraCount = Math.max(paraArr.length, 1);
+
+  // sentence length stats
+  const lens = sentenceArr.map(s => s.split(/\s+/).filter(w => w).length);
+  const avgLen = lens.length ? lens.reduce((a, b) => a + b, 0) / lens.length : 0;
+  const variance = lens.length ? lens.reduce((a, b) => a + Math.pow(b - avgLen, 2), 0) / lens.length : 0;
+  const stdev = Math.sqrt(variance);
+
+  // lexical diversity (Guiraud index)
+  const lowerWords = words.map(w => w.toLowerCase().replace(/[^a-z']/g, '')).filter(w => w);
+  const unique = new Set(lowerWords);
+  const gi = wordCount ? unique.size / Math.sqrt(wordCount) : 0;
+
+  // linkers
+  const lowerText = text.toLowerCase();
+  const linkersUsed = LINKERS.filter(l => lowerText.includes(l));
+  const linkerTypes = linkersUsed.length;
+
+  // academic words
+  const academicUsed = ACADEMIC.filter(a => lowerText.includes(a));
+
+  // overused content words
+  const freq = {};
+  lowerWords.forEach(w => {
+    if (w.length > 3 && !STOPWORDS.has(w)) freq[w] = (freq[w] || 0) + 1;
+  });
+  const threshold = Math.max(4, Math.ceil(wordCount * 0.025));
+  const overused = Object.entries(freq).filter(([w, c]) => c >= threshold).sort((a, b) => b[1] - a[1]).slice(0, 4);
+
+  // errors
+  const errors = findErrors(text);
+
+  // ---- SCORING ----
+  // Task Achievement / Response
+  let ta = 4.5;
+  const ratio = wordCount / minWords;
+  if (ratio >= 1) ta = 7.0;
+  else if (ratio >= 0.9) ta = 6.5;
+  else if (ratio >= 0.75) ta = 6.0;
+  else if (ratio >= 0.5) ta = 5.0;
+  else ta = 4.0;
+
+  if (paraCount >= 4) ta += 0.3;
+  else if (paraCount === 3) ta += 0.1;
+  else if (paraCount <= 1) ta -= 0.4;
+
+  if (taskType === 'task2') {
+    const hasConclusion = /in conclusion|to conclude|to sum up|in summary|overall/i.test(text);
+    const hasOpinion = /i (strongly )?(believe|think|agree|disagree)|in my (opinion|view)|from my perspective/i.test(text);
+    if (hasConclusion) ta += 0.2;
+    if (hasOpinion) ta += 0.2;
+  } else {
+    const hasOverview = /overall|in general|broadly speaking/i.test(text);
+    if (hasOverview) ta += 0.3;
+  }
+  ta = Math.min(8.0, Math.max(3.5, ta));
+
+  // Coherence & Cohesion
+  let cc = 4.5;
+  if (linkerTypes >= 10) cc = 7.5;
+  else if (linkerTypes >= 8) cc = 7.0;
+  else if (linkerTypes >= 6) cc = 6.5;
+  else if (linkerTypes >= 4) cc = 6.0;
+  else if (linkerTypes >= 2) cc = 5.5;
+  else cc = 4.5;
+
+  if (paraCount >= 5) cc += 0.2;
+  else if (paraCount === 4) cc += 0.3;
+  else if (paraCount === 3) cc += 0.1;
+  else if (paraCount <= 1) cc -= 0.5;
+  cc = Math.min(8.0, Math.max(3.5, cc));
+
+  // Lexical Resource
+  let lr;
+  if (gi >= 10) lr = 7.5;
+  else if (gi >= 9) lr = 7.0;
+  else if (gi >= 8) lr = 6.5;
+  else if (gi >= 7) lr = 6.0;
+  else if (gi >= 6) lr = 5.5;
+  else lr = 5.0;
+
+  lr += Math.min(0.5, academicUsed.length * 0.07);
+  lr -= Math.min(0.6, overused.length * 0.18);
+  lr = Math.min(8.0, Math.max(3.5, lr));
+
+  // Grammatical Range & Accuracy
+  let gra = 5.0;
+  if (stdev >= 6 && avgLen >= 14 && avgLen <= 26) gra = 7.0;
+  else if (stdev >= 4 && avgLen >= 12) gra = 6.5;
+  else if (stdev >= 2.5) gra = 6.0;
+  else gra = 5.5;
+
+  const complexMarkers = (text.match(/\b(which|that|who|whose|although|because|while|whereas|if|unless|since|despite|where)\b/gi) || []).length;
+  gra += Math.min(0.5, complexMarkers * 0.04);
+  gra -= Math.min(1.5, errors.length * 0.22);
+  gra = Math.min(8.0, Math.max(3.5, gra));
+
+  // Overall
+  const overall = Math.round(((ta + cc + lr + gra) / 4) * 2) / 2;
+
+  return {
+    wordCount, sentenceCount, paraCount,
+    avgLen: Math.round(avgLen),
+    stdev: Math.round(stdev * 10) / 10,
+    gi: Math.round(gi * 10) / 10,
+    uniqueCount: unique.size,
+    linkerTypes, linkersUsed,
+    academicUsed,
+    overused,
+    errors,
+    scores: {
+      ta: Math.round(ta * 2) / 2,
+      cc: Math.round(cc * 2) / 2,
+      lr: Math.round(lr * 2) / 2,
+      gra: Math.round(gra * 2) / 2
+    },
+    overall,
+    minWords
+  };
+}
+
+/* =====================================================
+   FEEDBACK BUILDER
+===================================================== */
+function bandColor(b) {
+  if (b >= 7) return '#16A34A';
+  if (b >= 6) return '#2563EB';
+  if (b >= 5.5) return '#D97706';
+  return '#C8102E';
+}
+
+function bandLabel(b) {
+  if (b >= 7.5) return 'Xuất sắc — sẵn sàng cho band 7.5+';
+  if (b >= 7) return 'Rất tốt — mục tiêu 7.0 trong tầm tay';
+  if (b >= 6.5) return 'Tốt — đã đạt mục tiêu 6.5!';
+  if (b >= 6) return 'Khá — gần đạt mục tiêu 6.5';
+  if (b >= 5.5) return 'Trung bình — cần cải thiện thêm';
+  return 'Cần luyện tập nhiều hơn';
+}
+
+function buildFeedback(r) {
+  const s = r.scores;
+  const pct = Math.min(100, (r.overall / 9) * 100);
+
+  // ---- strengths ----
+  const strengths = [];
+  if (r.wordCount >= r.minWords) strengths.push(`<strong>Đủ độ dài:</strong> ${r.wordCount} từ — đáp ứng yêu cầu tối thiểu ${r.minWords} từ.`);
+  if (r.paraCount >= 3) strengths.push(`<strong>Bố cục đoạn rõ ràng:</strong> ${r.paraCount} đoạn văn — giúp người đọc dễ theo dõi.`);
+  if (r.linkerTypes >= 4) strengths.push(`<strong>Dùng linking words tốt:</strong> ${r.linkerTypes} loại liên kết khác nhau (${r.linkersUsed.slice(0,5).join(', ')}...).`);
+  if (r.academicUsed.length >= 5) strengths.push(`<strong>Từ vựng học thuật:</strong> đã dùng ${r.academicUsed.length} từ học thuật (${r.academicUsed.slice(0,5).join(', ')}...).`);
+  if (r.stdev >= 4) strengths.push(`<strong>Câu văn đa dạng:</strong> độ dài câu biến thiên tốt (độ lệch chuẩn ${r.stdev}) — thể hiện khả năng dùng câu phức.`);
+  if (r.errors.length === 0) strengths.push(`<strong>Không phát hiện lỗi chính tả/ngữ pháp phổ biến</strong> trong hệ thống kiểm tra.`);
+
+  if (strengths.length === 0) {
+    strengths.push('Hãy tiếp tục luyện tập — AI chưa tìm thấy điểm mạnh nổi bật, nhưng mọi bài viết đều là bước tiến!');
+  }
+
+  // ---- issues ----
+  const issues = [];
+  if (r.wordCount < r.minWords) {
+    issues.push(`<strong>Bài viết quá ngắn:</strong> chỉ ${r.wordCount}/${r.minWords} từ. Trong phòng thi thật, bài dưới ${r.minWords} từ sẽ bị trừ điểm Task Achievement.`);
+  }
+  if (r.paraCount <= 1 && r.wordCount > 80) {
+    issues.push(`<strong>Chưa chia đoạn:</strong> bài viết chỉ có 1 khối văn bản. Hãy tách thành 4–5 đoạn, mỗi đoạn 1 ý chính.`);
+  }
+  if (r.linkerTypes < 3) {
+    issues.push(`<strong>Thiếu linking words:</strong> chỉ dùng ${r.linkerTypes} loại. Thêm <code>However</code>, <code>Moreover</code>, <code>Therefore</code>, <code>In conclusion</code>...`);
+  }
+  if (r.overused.length > 0) {
+    const list = r.overused.map(([w, c]) => `<code>${w}</code> (${c} lần)`).join(', ');
+    issues.push(`<strong>Lặp từ quá nhiều:</strong> ${list}. Hãy dùng từ đồng nghĩa hoặc đại từ thay thế.`);
+  }
+  if (r.avgLen > 30) {
+    issues.push(`<strong>Câu quá dài:</strong> trung bình ${r.avgLen} từ/câu. Câu dài dễ mắc lỗi ngữ pháp — hãy chia thành câu ngắn hơn.`);
+  }
+  if (r.avgLen < 10 && r.sentenceCount > 2) {
+    issues.push(`<strong>Câu quá ngắn:</strong> trung bình ${r.avgLen} từ/câu. Hãy dùng câu phức với <code>although</code>, <code>which</code>, <code>because</code> để tăng band ngữ pháp.`);
+  }
+  if (r.academicUsed.length < 4) {
+    issues.push(`<strong>Thiếu từ vựng học thuật:</strong> chỉ có ${r.academicUsed.length} từ. Thêm các từ như <code>significant</code>, <code>consequently</code>, <code>benefit</code>...`);
+  }
+  if (r.errors.length > 0) {
+    const shown = r.errors.slice(0, 3).map(e => `<code>${escapeHtml(e.text)}</code> → <code>${escapeHtml(e.fix)}</code>`).join(' · ');
+    issues.push(`<strong>${r.errors.length} lỗi phát hiện:</strong> ${shown}${r.errors.length > 3 ? ' và các lỗi khác' : ''}. Xem chi tiết bên dưới.`);
+  }
+
+  if (issues.length === 0) {
+    issues.push('Không phát hiện vấn đề lớn nào. Hãy tiếp tục duy trì phong độ này!');
+  }
+
+  // ---- suggestions ----
+  const tips = [];
+  if (r.overall < 6.5) {
+    tips.push('Viết ít nhất <strong>250 từ</strong> cho Task 2 và <strong>150 từ</strong> cho Task 1 — độ dài là điều kiện tiên quyết để không bị trừ điểm.');
+    tips.push('Học thuộc <strong>10 linking words</strong> và dùng chúng một cách tự nhiên: However, Moreover, Consequently, In addition, Nevertheless...');
+  }
+  if (r.gi < 8) {
+    tips.push('Mở rộng vốn từ: mỗi ngày học 5 từ học thuật mới và đặt câu với chúng. Tránh dùng đi dùng lại các từ cơ bản như <em>good, bad, big, very</em>.');
+  }
+  if (r.stdev < 4) {
+    tips.push('Đa dạng hoá cấu trúc câu: kết hợp câu đơn, câu ghép và câu phức. Ví dụ: <em>"Although X is true, Y is more important because..."</em>');
+  }
+  if (r.paraCount < 4) {
+    tips.push('Áp dụng bố cục chuẩn: Mở bài → Thân bài 1 → Thân bài 2 → (Nhượng bộ) → Kết bài. Mỗi đoạn chỉ nên có 1 ý chính.');
+  }
+  tips.push('Sau khi viết xong, hãy dành 2–3 phút đọc lại để tự kiểm tra lỗi chính tả, chia động từ và dấu câu.');
+  tips.push('Đọc các <a href="#samples" style="color:var(--purple);font-weight:700">bài mẫu band 6.5 – 7.0</a> để học cách triển khai ý tưởng và dùng từ vựng nâng cao.');
+
+  // ---- render ----
+  const critNames = {
+    ta: ['Task Achievement', '#2563EB'],
+    cc: ['Coherence & Cohesion', '#16A34A'],
+    lr: ['Lexical Resource', '#6D28D9'],
+    gra: ['Grammatical Range', '#D97706']
+  };
+
+  let html = `
+    <div class="fb-card">
+      <div class="fb-hero">
+        <div class="band-circle" style="--p:${pct};--c:${bandColor(r.overall)}">
+          <div class="band-inner">
+            <b>${r.overall.toFixed(1)}</b>
+            <small>Overall</small>
+          </div>
+        </div>
+        <div class="fb-hero-text">
+          <h3>${bandLabel(r.overall)}</h3>
+          <p>Band điểm ước tính dựa trên 4 tiêu chí chấm điểm IELTS Writing. Đây là ước lượng từ AI Coach, không phải điểm thi chính thức.</p>
+        </div>
+      </div>
+
+      <div class="crit-grid">
+        ${Object.keys(critNames).map(k => `
+          <div class="crit">
+            <div class="cname">${critNames[k][0]}</div>
+            <div class="cscore" style="color:${critNames[k][1]}">${s[k].toFixed(1)}</div>
+            <div class="cbar"><div class="cfill" style="background:${critNames[k][1]}" data-w="${(s[k]/9)*100}%"></div></div>
+          </div>
+        `).join('')}
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-cell"><b>${r.wordCount}</b><span>Số từ</span></div>
+        <div class="stat-cell"><b>${r.sentenceCount}</b><span>Số câu</span></div>
+        <div class="stat-cell"><b>${r.paraCount}</b><span>Số đoạn</span></div>
+        <div class="stat-cell"><b>${r.gi}</b><span>Độ đa dạng từ</span></div>
+      </div>
+
+      <div class="fb-section">
+        <h4><span class="ico ico-good">✓</span> Điểm mạnh</h4>
+        <div class="fb-list">
+          ${strengths.map(x => `<div class="fb-item"><span class="bullet b-good">✓</span><div>${x}</div></div>`).join('')}
+        </div>
+      </div>
+
+      <div class="fb-section">
+        <h4><span class="ico ico-warn">!</span> Vấn đề cần cải thiện</h4>
+        <div class="fb-list">
+          ${issues.map(x => `<div class="fb-item"><span class="bullet b-warn">!</span><div>${x}</div></div>`).join('')}
+        </div>
+      </div>
+
+      ${r.errors.length > 0 ? `
+      <div class="fb-section">
+        <h4><span class="ico ico-warn">✎</span> Chi tiết lỗi trong bài viết</h4>
+        <div class="essay-preview">${renderHighlighted(editor.value, r.errors)}</div>
+        <div class="fb-list" style="margin-top:16px">
+          ${r.errors.slice(0, 8).map((e, i) => `
+            <div class="fb-item">
+              <span class="bullet b-warn">${i + 1}</span>
+              <div><code>${escapeHtml(e.text)}</code> → <code>${escapeHtml(e.fix)}</code> — ${escapeHtml(e.msg)}</div>
+            </div>
+          `).join('')}
+          ${r.errors.length > 8 ? `<div class="fb-item"><span class="bullet b-tip">…</span><div>Còn ${r.errors.length - 8} lỗi khác. Hãy xem lại bài viết cẩn thận.</div></div>` : ''}
+        </div>
+      </div>` : ''}
+
+      <div class="fb-section">
+        <h4><span class="ico ico-tip">💡</span> Gợi ý cải thiện</h4>
+        <div class="fb-list">
+          ${tips.map(x => `<div class="fb-item"><span class="bullet b-tip">→</span><div>${x}</div></div>`).join('')}
+        </div>
+      </div>
+    </div>
+  `;
+
+  return html;
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+/* =====================================================
+   RUN AI
+===================================================== */
+function runAI() {
+  const text = editor.value.trim();
+
+  if (countWords(text) < 20) {
+    showToast('⚠️ Hãy viết ít nhất 20 từ trước khi chấm bài');
+    return;
+  }
+
+  const aiBtn = document.getElementById('aiBtn');
+  const loading = document.getElementById('loadingBox');
+  const feedback = document.getElementById('feedback');
+
+  aiBtn.disabled = true;
+  loading.classList.add('show');
+  feedback.classList.remove('show');
+
+  setTimeout(() => {
+    const result = analyzeEssay(text, currentTask);
+    feedback.innerHTML = buildFeedback(result);
+    feedback.classList.add('show');
+    loading.classList.remove('show');
+    aiBtn.disabled = false;
+
+    // animate criterion bars
+    setTimeout(() => {
+      feedback.querySelectorAll('.cfill').forEach(el => {
+        el.style.width = el.dataset.w;
+      });
+    }, 80);
+
+    // save history
+    saveHistory(result, text);
+
+    // scroll
+    feedback.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // auto-stop timer
+    if (timerState.running) {
+      clearInterval(timerState.interval);
+      timerState.interval = null;
+      timerState.running = false;
+      renderTimer();
+    }
+  }, 1200);
+}
+
+function clearEssay() {
+  if (editor.value.trim() && !confirm('Bạn có chắc muốn xoá toàn bộ bài viết?')) return;
+  editor.value = '';
+  updateWordcount();
+  document.getElementById('feedback').classList.remove('show');
+  resetTimer();
+  editor.focus();
+}
+
+/* =====================================================
+   HISTORY
+===================================================== */
+function saveHistory(result, text) {
+  try {
+    const hist = JSON.parse(localStorage.getItem('ieltsWritingHistory') || '[]');
+    hist.unshift({
+      date: new Date().toISOString(),
+      task: currentTask,
+      band: result.overall,
+      words: result.wordCount,
+      snippet: text.replace(/\s+/g, ' ').slice(0, 160)
+    });
+    localStorage.setItem('ieltsWritingHistory', JSON.stringify(hist.slice(0, 12)));
+    renderHistory();
+  } catch (e) { /* ignore */ }
+}
+
+function renderHistory() {
+  const el = document.getElementById('historyList');
+  let hist = [];
+  try { hist = JSON.parse(localStorage.getItem('ieltsWritingHistory') || '[]'); } catch (e) {}
+
+  if (!hist.length) {
+    el.innerHTML = `<div class="empty-state">📝 Chưa có bài viết nào được chấm. Hãy viết bài đầu tiên và nhấn <strong>"Chấm bài với AI"</strong>!</div>`;
+    return;
+  }
+
+  el.innerHTML = `<div class="history-grid">${hist.map(h => {
+    const d = new Date(h.date);
+    const dateStr = d.toLocaleDateString('vi-VN', { day: '2-digit', month: '2-digit', year: 'numeric' });
+    const timeStr = d.toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' });
+    return `
+      <div class="hist-card">
+        <div class="hist-top">
+          <span class="badge-sm">${h.task === 'task2' ? 'Task 2' : 'Task 1'}</span>
+          <span class="hist-score" style="color:${bandColor(h.band)}">${h.band.toFixed(1)}</span>
+        </div>
+        <div class="hist-snippet">${escapeHtml(h.snippet)}...</div>
+        <div class="hist-date">${h.words} từ · ${dateStr} ${timeStr}</div>
+      </div>
+    `;
+  }).join('')}</div>`;
+}
+
+/* =====================================================
+   SAMPLES TOGGLE
+===================================================== */
+function toggleSample(id) {
+  document.getElementById(id).classList.toggle('open');
+}
+
+/* =====================================================
+   PHRASE BANK
+===================================================== */
+function switchPhrase(cat) {
+  document.querySelectorAll('.ptab').forEach(b => {
+    b.classList.toggle('active', b.dataset.cat === cat);
+  });
+  const grid = document.getElementById('phraseGrid');
+  grid.innerHTML = PHRASES[cat].map(p => `
+    <div class="phrase-card" onclick="copyPhrase(this)">
+      <span class="copy-hint">NHẤN ĐỂ COPY</span>
+      <div class="en">${escapeHtml(p.en)}</div>
+      <div class="vi">${escapeHtml(p.vi)}</div>
+    </div>
+  `).join('');
+}
+
+function copyPhrase(el) {
+  const en = el.querySelector('.en').textContent;
+  const vi = el.querySelector('.vi').textContent;
+  const full = en + '  (' + vi + ')';
+
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(full).then(() => showToast('✓ Đã sao chép vào clipboard'))
+      .catch(() => fallbackCopy(full));
+  } else {
+    fallbackCopy(full);
+  }
+}
+
+function fallbackCopy(text) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand('copy'); showToast('✓ Đã sao chép vào clipboard'); }
+  catch (e) { showToast('⚠️ Không thể sao chép'); }
+  document.body.removeChild(ta);
+}
+
+/* =====================================================
+   TOAST
+===================================================== */
+let toastTimer = null;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+/* =====================================================
+   INIT
+===================================================== */
+window.addEventListener('load', () => {
+  // hero bars
+  document.querySelectorAll('.mfill').forEach(el => {
+    setTimeout(() => { el.style.width = el.dataset.w; }, 300);
+  });
+
+  // chart
+  renderChart();
+
+  // timer
+  resetTimer();
+  updateWordcount();
+
+  // phrase bank
+  switchPhrase('intro');
+
+  // history
+  renderHistory();
+
+  // smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function (e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>
